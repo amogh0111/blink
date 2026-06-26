@@ -1,8 +1,8 @@
-function StatusRow({ status, isModelReady }) {
+function StatusRow({ status, isModelReady, blinkCount }) {
   const pills = [
     { label: 'Camera', active: status === 'active' },
     { label: 'MediaPipe', active: isModelReady },
-    { label: 'Detection', active: false },
+    { label: 'Detection', active: blinkCount > 0 },
   ]
 
   return (
